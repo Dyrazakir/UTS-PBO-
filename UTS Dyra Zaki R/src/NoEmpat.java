@@ -1,22 +1,38 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author Dyra Zaki R
- */
 public class NoEmpat {
+
     public static void main(String[] args) {
-      
-        for(int counter = 1; counter <= 100; counter++){
-           if(counter % 2 != 0){
-               continue;
-           }
-          
-            System.out.println("Perulangan genap " + counter);
+        
+        System.out.println(factorialLoop(10));
+        System.out.println(factorialRecursive(10));
+        
+        loop(1000);
+    }
+    
+    static int factorialLoop(int value) {
+        int result = 1;
+        
+        for (int counter = 1; counter <= value; counter++){
+            result *= counter;
+        }
+        
+        return result;
+    }
+    
+    static int factorialRecursive(int value) {
+        if (value == 1) {
+            return 1;
+        } else {
+            return value* factorialRecursive(value-1);
         }
     }
-}
+    
+    static void loop(int value) {
+        if(value == 0) {
+            System.out.println("Selesai");
+        } else {
+            System.out.println("Loop" + value);
+            loop(value -1);
+        }
+    }
+    }
+    
